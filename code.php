@@ -1,34 +1,28 @@
-<style>
-    @media(min-width:768px) {
-        .container-1 {
-            display: flex;
-            justify-content: space-between;
+<?php
 
-        }
+if (isset($_GET["test_text"])) {
+
+    $new_message = [
+        "Kennzeichen" => $_GET["test_text"]
+    ];
+
+    if (filesize("data.json") == 0) {
+
+        $first_record = array($new_message);
+
+        $data_to_save = $first_record;
+    } else {
+        $old_records = json_decode(file_get_contents("data.json"));
+
+        array_push($old_records, $new_message);
+
+        $data_to_save = $old_records;
     }
 
-    .container-1 div {
-        border: 1px #ccc solid;
-        padding: 10px;
+    if (!file_put_contents("data.json", json_encode($data_to_save, JSON_PRETTY_PRINT), LOCK_EX)) {
 
+        $error = "ERROR";
+    } else {
+        $success = "NICE";
     }
-
-    .box-1 {
-        flex-basis: 27%;
-    }
-
-    .box-1 {
-        flex: 2;
-        order: 2;
-
-    }
-
-    .box-2 {
-        flex: 1;
-        order: 1;
-    }
-
-    .box-3 {
-        flex: 1;
-        order: 3;
-    }
+};

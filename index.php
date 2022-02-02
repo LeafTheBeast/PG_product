@@ -1,6 +1,6 @@
 <?php
 include_once("style.php");
-$arr = file_get_contents("data.json");
+include_once("code.php");
 $data = json_decode($arr);
 $checking = $_GET["test_text"];
 // do {
@@ -41,5 +41,5 @@ $checking = $_GET["test_text"];
 
 </html>
 <?php
-include_once("code.php")
+
 ?>
