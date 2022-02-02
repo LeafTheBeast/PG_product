@@ -1,6 +1,18 @@
 <?php
-include_once("style.php")
-
+include_once("style.php");
+$arr = file_get_contents("data.json");
+$data = json_decode($arr);
+$checking = $_GET["test_text"];
+// do {
+//   $counter = count($arr);
+//   $counter++;
+//   $arr[$counter] = $_POST["test_text"];
+// } while (isset($_POST["test_text"]));
+// if (!(isset($_GET["test_text"]))) {
+//   $test = 'hello';
+// } else {
+//   $test = 'not hello';
+// }
 ?>
 
 </style>
@@ -16,19 +28,14 @@ include_once("style.php")
 
 <body>
   <h1>Pierre Grönich</h1>
-  <div class="container-1">
-    <div class="box-1">
-      <h3>Box One</h3>
-      <p>Das ist eine Box.</p>
-    </div>
-    <div class="box-2">
-      <h3>Box Two</h3>
-      <p>Das ist eine Box.</p>
-    </div>
-    <div class="box-3">
-      <h3>Box Three</h3>
-      <p>Das ist eine Box.</p>
-    </div>
+  <div>
+    <form action="index.php" method="GET">
+      <input type="text" name="test_text">
+      <input type="submit">
+    </form>
+    <p><?php echo $_GET['test_text'] ?></p>
+    <p><?php echo print_r($data) ?></p>
+    <p><?php echo $data->name ?></p>
   </div>
 </body>
 
