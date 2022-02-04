@@ -1,6 +1,6 @@
 <?php
-include_once("style.php");
-include_once("code.php");
+include_once "style.php";
+include_once "code.php";
 $data = json_decode($arr);
 $checking = $_GET["test_text"];
 // do {
@@ -35,7 +35,7 @@ $checking = $_GET["test_text"];
     </form>
     <p><?php echo $_GET['test_text'] ?></p>
     <p><?php echo print_r($data) ?></p>
-    <p><?php echo $data->name ?></p>
+    <p><?php print_r($test) ?></p>
   </div>
 </body>
 

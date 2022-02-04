@@ -25,4 +25,9 @@ if (isset($_GET["test_text"])) {
     } else {
         $success = "NICE";
     }
+
+    if (filesize("data.json") != 0) {
+        $file = file_get_contents("data.json");
+        $test = (object) json_decode($file);
+    }
 };
