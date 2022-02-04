@@ -1,18 +1,7 @@
 <?php
 include_once "style.php";
 include_once "code.php";
-$data = json_decode($arr);
-$checking = $_GET["test_text"];
-// do {
-//   $counter = count($arr);
-//   $counter++;
-//   $arr[$counter] = $_POST["test_text"];
-// } while (isset($_POST["test_text"]));
-// if (!(isset($_GET["test_text"]))) {
-//   $test = 'hello';
-// } else {
-//   $test = 'not hello';
-// }
+
 ?>
 
 </style>
@@ -27,7 +16,7 @@ $checking = $_GET["test_text"];
 </head>
 
 <body>
-  <h1>Pierre Grönich</h1>
+  <h1>Project X</h1>
   <div>
     <form action="index.php" method="GET">
       <input type="text" name="test_text">

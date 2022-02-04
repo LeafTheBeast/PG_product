@@ -32,4 +32,13 @@ if (isset($_GET["test_text"])) {
         $file = file_get_contents("data.json");
         $test = json_decode($file, true);
     }
+
+    function deleteStuff()
+    {
+        $file = file_get_contents("data.json");
+        $reaplace = preg_replace('/[A-Z,a-z]/', '', $file);
+        file_put_contents("data.json", $reaplace);
+    }
+
+    $a = deleteStuff();
 };
