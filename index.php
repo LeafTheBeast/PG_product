@@ -34,8 +34,10 @@ $checking = $_GET["test_text"];
       <input type="submit">
     </form>
     <p><?php echo $_GET['test_text'] ?></p>
-    <p><?php echo print_r($data) ?></p>
-    <p><?php print_r($test) ?></p>
+    <p><?php  ?></p>
+    <p><?php foreach ($test as $row) {
+          echo  $row["Kennzeichen"] . "\n";
+        } ?></p>
   </div>
 </body>
 
