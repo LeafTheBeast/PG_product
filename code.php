@@ -1,9 +1,9 @@
 <?php
 
-if (isset($_GET["test_text"])) {
+if (isset($_POST["test_text"])) {
 
     $new_message = [
-        "Kennzeichen" => $_GET["test_text"]
+        "Kennzeichen" => $_POST["test_text"]
     ];
 
     if (filesize("data.json") == 0) {
@@ -33,12 +33,16 @@ if (isset($_GET["test_text"])) {
         $test = json_decode($file, true);
     }
 
+
+
     function deleteStuff()
     {
         $file = file_get_contents("data.json");
-        $reaplace = preg_replace('/[A-Z,a-z]/', '', $file);
+        $reaplace = preg_replace('/[A-Z,]/', '', $file);
         file_put_contents("data.json", $reaplace);
     }
 
-    $a = deleteStuff();
+    if (isset($_POST['delete_button'])) {
+        deleteStuff();
+    }
 };

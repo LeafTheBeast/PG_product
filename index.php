@@ -18,11 +18,12 @@ include_once "code.php";
 <body>
   <h1>Project X</h1>
   <div>
-    <form action="index.php" method="GET">
+    <form action="index.php" method="POST">
       <input type="text" name="test_text">
       <input type="submit">
+      <input type="submit" name="delete_button" value="Delete">
     </form>
-    <p><?php echo $_GET['test_text'] ?></p>
+    <p><?php echo $_POST['test_text'] ?></p>
     <p><?php  ?></p>
     <p><?php foreach ($test as $row) {
           echo  $row["Kennzeichen"] . "\n";
