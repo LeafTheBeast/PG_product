@@ -38,7 +38,7 @@ if (isset($_POST["test_text"])) {
     function deleteStuff()
     {
         $file = file_get_contents("data.json");
-        $reaplace = preg_replace('/[A-Z,]/', '', $file);
+        $reaplace = preg_replace('/,/]/', '', $file);
         file_put_contents("data.json", $reaplace);
     }
 
