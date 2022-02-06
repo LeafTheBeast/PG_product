@@ -20,13 +20,18 @@ include_once "code.php";
   <div>
     <form action="index.php" method="POST">
       <input type="text" name="test_text">
+      <br>
+      <input type="text" name="test_notiz">
       <input type="submit">
-      <input type="submit" name="delete_button" value="Delete">
+      <input type="submit" name="delete_button" value="Delete All">
     </form>
     <p><?php echo $_POST['test_text'] ?></p>
     <p><?php  ?></p>
     <p><?php foreach ($test as $row) {
           echo  $row["Kennzeichen"] . "\n";
+        } ?></p>
+    <p><?php foreach ($test as $row) {
+          echo  $row["Notiz"] . "\n";
         } ?></p>
   </div>
 </body>
