@@ -2,8 +2,11 @@
 //Checking the input of $_POST["test_text"]
 if (isset($_POST["test_text"])) {
 
+
     //If $_POST["test_text"] is set -> this 
     $new_message = [
+
+        "id" => $index,
         "Kennzeichen" => $_POST["test_text"],
         "Notiz" => $_POST["test_notiz"]
     ];
@@ -21,12 +24,13 @@ if (isset($_POST["test_text"])) {
         $data_to_save = $old_records;
     }
 
-    if (!file_put_contents("data.json", json_encode($data_to_save, JSON_PRETTY_PRINT), LOCK_EX)) {
+    if (!file_put_contents("data.json", json_encode($data_to_save), LOCK_EX)) {
 
         $error = "ERROR";
     } else {
         $success = "NICE";
     }
+
 
 
     //Getting the content of the "data.json" file

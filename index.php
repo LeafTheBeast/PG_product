@@ -22,6 +22,8 @@ include_once "code.php";
       <input type="text" name="test_text">
       <br>
       <input type="text" name="test_notiz">
+      <br>
+      <br>
       <input type="submit">
       <input type="submit" name="delete_button" value="Delete All">
     </form>
@@ -33,6 +35,8 @@ include_once "code.php";
     <p><?php foreach ($test as $row) {
           echo  $row["Notiz"] . "\n";
         } ?></p>
+    <p><?php
+        ?></p>
   </div>
 </body>
 
